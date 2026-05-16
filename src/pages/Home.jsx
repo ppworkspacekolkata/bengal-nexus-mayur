@@ -33,11 +33,7 @@ export default function Home() {
       className="page-transition-wrapper"
     >
       {/* 3D Hero Section */}
-      <section className="hero-3d" style={{ paddingTop: '120px' }}>
-        <div className="hero-canvas-container" style={{ pointerEvents: 'none' }}>
-          <Scene3D />
-        </div>
-        
+      <section className="hero-3d" style={{ paddingTop: '120px', display: 'flex', alignItems: 'center' }}>
         <div className="container hero-content-wrapper">
           <div className="hero-grid">
             <motion.div 
@@ -49,13 +45,13 @@ export default function Home() {
               <div style={{ display: 'inline-block', padding: '8px 16px', background: 'rgba(242, 101, 34, 0.1)', color: 'var(--accent-gold)', borderRadius: '30px', fontWeight: '700', marginBottom: '20px', fontSize: '0.9rem', border: '1px solid rgba(242, 101, 34, 0.2)', textTransform: 'uppercase', letterSpacing: '1px' }}>
                 <Star size={14} fill="var(--accent-gold)" style={{ display: 'inline', marginRight: '5px', verticalAlign: 'text-top' }} /> GLOBAL AGRO EXPORTS
               </div>
-              <h1 style={{ fontSize: 'clamp(3.5rem, 6vw, 5.5rem)', lineHeight: '1.1', fontWeight: '800' }}>
+              <h1 style={{ fontSize: 'clamp(2.5rem, 8vw, 5.5rem)', lineHeight: '1.1', fontWeight: '800' }}>
                 Exporting <span style={{ color: 'var(--primary-green)' }}>Premium</span><br/> Indian Quality
               </h1>
-              <p style={{ fontSize: 'clamp(1.1rem, 2vw, 1.3rem)', color: 'var(--text-muted)', marginTop: '20px', marginBottom: '40px', maxWidth: '550px' }}>
+              <p style={{ fontSize: 'clamp(1rem, 3vw, 1.3rem)', color: 'var(--text-muted)', marginTop: '20px', marginBottom: '40px', maxWidth: '550px' }}>
                 Bridging local roots with global markets. We supply export-grade agricultural commodities with an uncompromising commitment to quality, tracking, and timeline.
               </p>
-              <div className="hero-buttons" style={{ display: 'flex', gap: '20px', alignItems: 'center', marginTop: '30px' }}>
+              <div className="hero-buttons" style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', alignItems: 'center', marginTop: '30px', justifyContent: 'center' }}>
                 <Link to="/products" className="btn btn-primary" style={{ padding: '16px 36px', fontSize: '1.1rem' }}>
                   Explore Catalog <ArrowRight size={20} />
                 </Link>
@@ -63,6 +59,17 @@ export default function Home() {
                   Get Quote
                 </Link>
               </div>
+            </motion.div>
+
+            {/* 3D Visual Column */}
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.4, duration: 1 }}
+              style={{ width: '100%', height: '500px', position: 'relative' }}
+              className="hero-3d-visual"
+            >
+              <Scene3D />
             </motion.div>
           </div>
         </div>
