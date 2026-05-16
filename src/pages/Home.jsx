@@ -258,6 +258,41 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Certifications & Compliance Section */}
+      <section className="section" style={{ background: 'var(--navy-blue)', color: 'white', padding: '100px 0' }}>
+        <div className="container">
+          <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+            <span style={{ color: 'var(--accent-gold)', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>Quality & Compliance</span>
+            <h2 className="section-title" style={{ marginTop: '10px', color: 'white' }}>Global Export Standards</h2>
+            <p style={{ color: '#A0AAB2', fontSize: '1.1rem', maxWidth: '600px', margin: '0 auto' }}>We adhere to the strictest international food safety and export regulations to ensure seamless customs clearance worldwide.</p>
+          </div>
+          
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '30px' }}>
+            {[
+              { name: "APEDA Certified", desc: "Registered with Agricultural and Processed Food Products Export Development Authority of India." },
+              { name: "FSSAI Approved", desc: "Compliant with Food Safety and Standards Authority of India for all agricultural exports." },
+              { name: "Phytosanitary Cleared", desc: "All shipments undergo strict phytosanitary checks to prevent pest propagation." },
+              { name: "ISO 9001:2015", desc: "Quality management systems ensuring consistent products and services that meet regulatory requirements." }
+            ].map((cert, i) => (
+              <motion.div 
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.15 }}
+                style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '20px', padding: '30px', textAlign: 'center' }}
+              >
+                <div style={{ width: '60px', height: '60px', margin: '0 auto 20px', background: 'rgba(212, 175, 55, 0.15)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <ShieldCheck size={30} color="var(--accent-gold)" />
+                </div>
+                <h4 style={{ fontSize: '1.2rem', marginBottom: '10px', color: 'white' }}>{cert.name}</h4>
+                <p style={{ color: '#A0AAB2', fontSize: '0.9rem', lineHeight: '1.6' }}>{cert.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
     </motion.div>
   );
 }
