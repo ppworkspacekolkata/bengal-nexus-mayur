@@ -71,7 +71,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ color: 'white', marginBottom: '8px', fontSize: '1.2rem' }}>Corporate Office</h4>
-                  <p style={{ color: '#A0AAB2', lineHeight: '1.6' }}>DTC Southern Heights,<br />Joka, Kolkata – 700104,<br />West Bengal, India</p>
+                  <p style={{ color: '#A0AAB2', lineHeight: '1.6' }}>Bengal Nexus Exports<br />285, Mahatma Gandhi Road,<br />Kolkata 700104</p>
                 </div>
               </div>
 
@@ -81,7 +81,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h4 style={{ color: 'white', marginBottom: '8px', fontSize: '1.2rem' }}>Direct Line</h4>
-                  <p style={{ color: '#A0AAB2', lineHeight: '1.6' }}>+91 9073136651<br/><span style={{ fontSize: '0.9rem', color: 'var(--primary-green)' }}>Available on WhatsApp</span></p>
+                  <p style={{ color: '#A0AAB2', lineHeight: '1.6' }}>+91 9830540185<br/><span style={{ fontSize: '0.9rem', color: 'var(--primary-green)' }}>Available on WhatsApp</span></p>
                 </div>
               </div>
 

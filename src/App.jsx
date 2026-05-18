@@ -39,7 +39,7 @@ function App() {
       <Footer />
       
       {/* Premium Sticky WhatsApp */}
-      <a href="https://wa.me/919073136651" target="_blank" rel="noreferrer" className="sticky-whatsapp" aria-label="Chat on WhatsApp" style={{
+      <a href="https://wa.me/919830540185" target="_blank" rel="noreferrer" className="sticky-whatsapp" aria-label="Chat on WhatsApp" style={{
         position: 'fixed', bottom: '40px', right: '40px', width: '65px', height: '65px', 
         background: 'linear-gradient(135deg, #25D366, #128C7E)', color: 'white', borderRadius: '50%', display: 'flex', 
         alignItems: 'center', justifyContent: 'center', fontSize: '30px', zIndex: 1000,

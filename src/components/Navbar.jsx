@@ -24,11 +24,11 @@ export default function Navbar() {
       <div className="top-bar">
         <div className="container top-bar-content">
           <div className="top-bar-info">
-            <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><Phone size={14} color="var(--accent-gold)" /> +91 9073136651</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><Phone size={14} color="var(--accent-gold)" /> +91 9830540185</span>
             <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><Mail size={14} color="var(--accent-gold)" /> bengalnexusexports@gmail.com</span>
           </div>
           <div style={{ display: 'flex', gap: '20px' }}>
-            <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><MapPin size={14} color="var(--accent-gold)" /> DTC Southern Heights, Joka, Kolkata</span>
+            <span style={{ display: 'flex', alignItems: 'center', gap: '5px' }}><MapPin size={14} color="var(--accent-gold)" /> 285, Mahatma Gandhi Road, Kolkata - 700104</span>
           </div>
         </div>
       </div>
@@ -80,7 +80,7 @@ export default function Navbar() {
               <Link to="/contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ marginTop: '10px', textAlign: 'center' }}>Request Quote</Link>
               
               <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px', color: 'var(--text-muted)' }}>
-                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Phone size={16} color="var(--primary-green)" /> +91 9073136651</span>
+                <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Phone size={16} color="var(--primary-green)" /> +91 9830540185</span>
                 <span style={{ display: 'flex', alignItems: 'center', gap: '8px' }}><Mail size={16} color="var(--primary-green)" /> bengalnexusexports@gmail.com</span>
               </div>
             </motion.div>

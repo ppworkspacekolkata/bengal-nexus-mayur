@@ -85,7 +85,7 @@ export default function PrivacyPolicy() {
             </p>
             <div style={{ marginTop: '15px', padding: '20px', background: 'var(--bg-offwhite)', borderRadius: '12px', borderLeft: '4px solid var(--primary-green)' }}>
               <strong>Bengal Nexus Exports Pvt. Ltd.</strong><br />
-              DTC Southern Heights, Joka, Kolkata – 700104, West Bengal, India<br />
+              285, Mahatma Gandhi Road, Kolkata 700104, India<br />
               Email: <a href="mailto:bengalnexusexports@gmail.com" style={{ color: 'var(--primary-green)', fontWeight: '600' }}>bengalnexusexports@gmail.com</a>
             </div>
           </section>

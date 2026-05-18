@@ -80,11 +80,11 @@ export default function Footer() {
             <ul style={{ display: 'flex', flexDirection: 'column', gap: '20px', color: '#A0AAB2' }}>
               <li style={{ display: 'flex', gap: '15px', alignItems: 'flex-start' }}>
                 <MapPin size={20} color="var(--accent-gold)" style={{ flexShrink: 0, marginTop: '5px' }} />
-                <span>DTC Southern Heights,<br />Joka, Kolkata – 700104,<br />West Bengal, India</span>
+                <span>Bengal Nexus Exports<br />285, Mahatma Gandhi Road,<br />Kolkata 700104</span>
               </li>
               <li style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
                 <Phone size={20} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
-                <span>+91 9073136651</span>
+                <span>+91 9830540185</span>
               </li>
               <li style={{ display: 'flex', gap: '15px', alignItems: 'center' }}>
                 <Mail size={20} color="var(--accent-gold)" style={{ flexShrink: 0 }} />
