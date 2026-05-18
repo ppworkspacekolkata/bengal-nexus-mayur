@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Phone, Mail, MapPin, Send, Globe, Building } from 'lucide-react';
+import { Phone, Mail, MapPin, Send, Globe, Building, Check, Award } from 'lucide-react';
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -54,107 +54,201 @@ export default function Contact() {
           <p style={{ fontSize: '1.2rem', color: 'var(--text-muted)', maxWidth: '600px', margin: '20px auto 0' }}>Request a comprehensive FOB or CIF quotation. Our export specialists will respond within 24 hours.</p>
         </div>
 
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '0', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.1)' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '0', borderRadius: '30px', overflow: 'hidden', boxShadow: '0 30px 60px rgba(0,0,0,0.15)' }}>
           
           {/* Contact Info (Dark Premium Side) */}
-          <div style={{ background: 'var(--navy-blue)', color: 'white', padding: '60px', position: 'relative', overflow: 'hidden' }}>
+          <div style={{ background: '#111C27', color: 'white', padding: 'clamp(40px, 5vw, 60px)', position: 'relative', overflow: 'hidden', display: 'flex', flexDirection: 'column', justifyContent: 'space-between', borderRight: '1px solid rgba(255,255,255,0.05)' }}>
             {/* Background Accent */}
-            <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '300px', height: '300px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(10, 92, 54, 0.4), transparent)', filter: 'blur(50px)' }}></div>
+            <div style={{ position: 'absolute', top: '-100px', right: '-100px', width: '300px', height: '300px', borderRadius: '50%', background: 'linear-gradient(135deg, rgba(229, 184, 52, 0.1), transparent)', filter: 'blur(50px)' }}></div>
             
-            <h3 style={{ fontSize: '2.2rem', marginBottom: '15px', color: 'white', position: 'relative', zIndex: 2 }}>Headquarters</h3>
-            <p style={{ color: '#A0AAB2', fontSize: '1.1rem', marginBottom: '50px', position: 'relative', zIndex: 2 }}>Bengal Nexus Exports Pvt Ltd.</p>
-            
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '40px', position: 'relative', zIndex: 2 }}>
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '15px', background: 'rgba(212, 175, 55, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
-                  <MapPin size={24} />
+            <div style={{ position: 'relative', zIndex: 2 }}>
+              <span style={{ color: '#E5B834', fontWeight: '700', fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', marginBottom: '15px' }}>Enquiry Portal</span>
+              <h3 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '20px', color: 'white', lineHeight: '1.2', fontFamily: 'serif' }}>Request a<br />Premium<br />Quote</h3>
+              <p style={{ color: '#A0AAB2', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '40px', maxWidth: '300px' }}>Direct access to our specialists for volume exports and bespoke requirements.</p>
+              
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                <div style={{ display: 'flex', gap: '15px', alignItems: 'center', padding: '16px 20px', background: '#1C2B3A', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '12px', transition: 'all 0.3s ease' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(229, 184, 52, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E5B834', flexShrink: 0 }}>
+                    <Mail size={18} />
+                  </div>
+                  <span style={{ color: '#E2E8F0', fontSize: '0.95rem', fontWeight: '500', wordBreak: 'break-all' }}>bengalnexusexports@gmail.com</span>
                 </div>
-                <div>
-                  <h4 style={{ color: 'white', marginBottom: '8px', fontSize: '1.2rem' }}>Corporate Office</h4>
-                  <p style={{ color: '#A0AAB2', lineHeight: '1.6' }}>Bengal Nexus Exports<br />285, Mahatma Gandhi Road,<br />Kolkata 700104</p>
-                </div>
-              </div>
 
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '15px', background: 'rgba(212, 175, 55, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
-                  <Phone size={24} />
-                </div>
-                <div>
-                  <h4 style={{ color: 'white', marginBottom: '8px', fontSize: '1.2rem' }}>Direct Line</h4>
-                  <p style={{ color: '#A0AAB2', lineHeight: '1.6' }}>+91 9830540185<br/><span style={{ fontSize: '0.9rem', color: 'var(--primary-green)' }}>Available on WhatsApp</span></p>
-                </div>
-              </div>
-
-              <div style={{ display: 'flex', gap: '20px', alignItems: 'flex-start' }}>
-                <div style={{ width: '50px', height: '50px', borderRadius: '15px', background: 'rgba(212, 175, 55, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: 'var(--accent-gold)', flexShrink: 0 }}>
-                  <Globe size={24} />
-                </div>
-                <div>
-                  <h4 style={{ color: 'white', marginBottom: '8px', fontSize: '1.2rem' }}>Digital Inquiries</h4>
-                  <p style={{ color: '#A0AAB2', lineHeight: '1.6' }}>bengalnexusexports@gmail.com<br/>www.bengalnexusexports.com</p>
+                <div style={{ display: 'flex', gap: '15px', alignItems: 'center', padding: '16px 20px', background: '#1C2B3A', border: '1px solid rgba(255, 255, 255, 0.05)', borderRadius: '12px', transition: 'all 0.3s ease' }}>
+                  <div style={{ width: '36px', height: '36px', borderRadius: '8px', background: 'rgba(229, 184, 52, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E5B834', flexShrink: 0 }}>
+                    <Phone size={18} />
+                  </div>
+                  <span style={{ color: '#E2E8F0', fontSize: '0.95rem', fontWeight: '500' }}>+91 9830540185</span>
                 </div>
               </div>
             </div>
+
+            <div style={{ position: 'relative', zIndex: 2, marginTop: '40px', display: 'flex', alignItems: 'center', gap: '10px', color: '#A0AAB2', fontSize: '0.9rem', fontWeight: '600', letterSpacing: '1px' }}>
+              <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(229, 184, 52, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E5B834' }}>
+                <Award size={18} />
+              </div>
+              <span>ISO 9001:2015 CERTIFIED</span>
+            </div>
           </div>
 
-          {/* Grand Inquiry Form (Light Side) */}
-          <div style={{ background: 'white', padding: '60px' }}>
-            <h3 style={{ fontSize: '2rem', marginBottom: '10px', color: 'var(--navy-blue)' }}>Request Quotation</h3>
-            <p style={{ color: 'var(--text-muted)', marginBottom: '40px' }}>Fill out the form below and our export team will process your request immediately.</p>
-            
+          {/* Grand Inquiry Form (Dark Theme matching the reference) */}
+          <div style={{ background: '#121E2C', padding: 'clamp(30px, 5vw, 60px)', position: 'relative' }}>
             {isSuccess ? (
               <motion.div 
                 initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
-                style={{ textAlign: 'center', padding: '40px 20px', background: 'rgba(40, 167, 69, 0.1)', borderRadius: '20px', border: '1px solid rgba(40, 167, 69, 0.2)' }}
+                style={{ textAlign: 'center', padding: '60px 20px', background: 'rgba(229, 184, 52, 0.05)', borderRadius: '20px', border: '1px solid rgba(229, 184, 52, 0.1)' }}
               >
-                <div style={{ width: '60px', height: '60px', borderRadius: '50%', background: 'var(--primary-green)', color: 'white', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 20px' }}>
-                  <Send size={30} />
+                <div style={{ width: '70px', height: '70px', borderRadius: '50%', background: '#E5B834', color: '#0B131D', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 25px' }}>
+                  <Check size={36} />
                 </div>
-                <h3 style={{ color: 'var(--primary-green)', fontSize: '1.5rem', marginBottom: '10px' }}>Inquiry Sent Successfully!</h3>
-                <p style={{ color: 'var(--text-muted)' }}>Thank you for reaching out to Bengal Nexus Exports. Our export team will review your requirements and get back to you within 24 hours.</p>
-                <button onClick={() => setIsSuccess(false)} className="btn btn-outline" style={{ marginTop: '20px', padding: '10px 20px' }}>Send Another Inquiry</button>
+                <h3 style={{ color: '#E5B834', fontSize: '1.8rem', fontWeight: '700', marginBottom: '15px' }}>Inquiry Sent Successfully!</h3>
+                <p style={{ color: '#A0AAB2', fontSize: '1.05rem', lineHeight: '1.6', maxWidth: '500px', margin: '0 auto' }}>Thank you for reaching out. Our global trade and export specialists have received your requirements and will compile a customized quotation for you within 24 hours.</p>
+                <button onClick={() => setIsSuccess(false)} className="btn btn-outline" style={{ marginTop: '30px', padding: '12px 28px', color: '#E5B834', borderColor: '#E5B834', background: 'transparent', borderRadius: '30px' }}>Send Another Inquiry</button>
               </motion.div>
             ) : (
-              <form onSubmit={handleSubmit}>
-                {/* REQUIRED: Replace with your actual Web3Forms Access Key */}
+              <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
+                {/* Web3Forms details */}
                 <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
                 <input type="hidden" name="subject" value="New B2B Export Inquiry from Website" />
                 <input type="hidden" name="from_name" value="Bengal Nexus Exports Portal" />
 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px', marginBottom: '25px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px' }}>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '10px', fontWeight: '600', color: 'var(--navy-blue)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Full Name *</label>
-                    <input type="text" name="name" style={{ width: '100%', padding: '18px 20px', borderRadius: '12px', border: '1px solid #E2E8F0', background: '#F8FAFC', outline: 'none', transition: 'all 0.3s', fontSize: '1rem' }} placeholder="John Doe" required />
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Full Name *</label>
+                    <input type="text" name="name" className="premium-dark-input" placeholder="Rahul Sharma" required />
                   </div>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '10px', fontWeight: '600', color: 'var(--navy-blue)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Company Name *</label>
-                    <input type="text" name="company" style={{ width: '100%', padding: '18px 20px', borderRadius: '12px', border: '1px solid #E2E8F0', background: '#F8FAFC', outline: 'none', transition: 'all 0.3s', fontSize: '1rem' }} placeholder="Global Traders LLC" required />
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Company Name *</label>
+                    <input type="text" name="company" className="premium-dark-input" placeholder="Optional" />
                   </div>
                 </div>
                 
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px', marginBottom: '25px' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px' }}>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '10px', fontWeight: '600', color: 'var(--navy-blue)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Email Address *</label>
-                    <input type="email" name="email" style={{ width: '100%', padding: '18px 20px', borderRadius: '12px', border: '1px solid #E2E8F0', background: '#F8FAFC', outline: 'none', transition: 'all 0.3s', fontSize: '1rem' }} placeholder="john@example.com" required />
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Work Email *</label>
+                    <input type="email" name="email" className="premium-dark-input" placeholder="email@company.com" required />
                   </div>
                   <div>
-                    <label style={{ display: 'block', marginBottom: '10px', fontWeight: '600', color: 'var(--navy-blue)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>WhatsApp Number *</label>
-                    <input type="tel" name="whatsapp" style={{ width: '100%', padding: '18px 20px', borderRadius: '12px', border: '1px solid #E2E8F0', background: '#F8FAFC', outline: 'none', transition: 'all 0.3s', fontSize: '1rem' }} placeholder="+1 234 567 8900" required />
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Phone Number *</label>
+                    <input type="tel" name="whatsapp" className="premium-dark-input" placeholder="+91 ..." required />
                   </div>
                 </div>
 
-                <div style={{ marginBottom: '25px' }}>
-                  <label style={{ display: 'block', marginBottom: '10px', fontWeight: '600', color: 'var(--navy-blue)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Destination Country *</label>
-                  <input type="text" name="country" style={{ width: '100%', padding: '18px 20px', borderRadius: '12px', border: '1px solid #E2E8F0', background: '#F8FAFC', outline: 'none', transition: 'all 0.3s', fontSize: '1rem' }} placeholder="e.g., United States, UAE, UK" required />
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px' }}>
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Destination Country *</label>
+                    <select name="country" className="premium-dark-input" required>
+                      <option value="" disabled selected style={{ color: '#6B7C8E' }}>Select Country</option>
+                      <optgroup label="Popular Destinations" style={{ background: '#121E2C', color: '#E5B834' }}>
+                        <option value="United States">United States (USA)</option>
+                        <option value="United Arab Emirates">United Arab Emirates (UAE)</option>
+                        <option value="Saudi Arabia">Saudi Arabia</option>
+                        <option value="United Kingdom">United Kingdom (UK)</option>
+                        <option value="Bangladesh">Bangladesh</option>
+                        <option value="Nepal">Nepal</option>
+                        <option value="Germany">Germany</option>
+                        <option value="Netherlands">Netherlands</option>
+                        <option value="Singapore">Singapore</option>
+                        <option value="Malaysia">Malaysia</option>
+                        <option value="Japan">Japan</option>
+                        <option value="Canada">Canada</option>
+                        <option value="Australia">Australia</option>
+                      </optgroup>
+                      <optgroup label="All Countries" style={{ background: '#121E2C', color: 'white' }}>
+                        <option value="Afghanistan">Afghanistan</option>
+                        <option value="Albania">Albania</option>
+                        <option value="Algeria">Algeria</option>
+                        <option value="Argentina">Argentina</option>
+                        <option value="Austria">Austria</option>
+                        <option value="Bahrain">Bahrain</option>
+                        <option value="Belgium">Belgium</option>
+                        <option value="Brazil">Brazil</option>
+                        <option value="Chile">Chile</option>
+                        <option value="China">China</option>
+                        <option value="Colombia">Colombia</option>
+                        <option value="Denmark">Denmark</option>
+                        <option value="Egypt">Egypt</option>
+                        <option value="France">France</option>
+                        <option value="Greece">Greece</option>
+                        <option value="Hong Kong">Hong Kong</option>
+                        <option value="Indonesia">Indonesia</option>
+                        <option value="Iran">Iran</option>
+                        <option value="Iraq">Iraq</option>
+                        <option value="Ireland">Ireland</option>
+                        <option value="Italy">Italy</option>
+                        <option value="Jordan">Jordan</option>
+                        <option value="Kenya">Kenya</option>
+                        <option value="Kuwait">Kuwait</option>
+                        <option value="Lebanon">Lebanon</option>
+                        <option value="Mexico">Mexico</option>
+                        <option value="Morocco">Morocco</option>
+                        <option value="New Zealand">New Zealand</option>
+                        <option value="Nigeria">Nigeria</option>
+                        <option value="Norway">Norway</option>
+                        <option value="Oman">Oman</option>
+                        <option value="Pakistan">Pakistan</option>
+                        <option value="Philippines">Philippines</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Portugal">Portugal</option>
+                        <option value="Qatar">Qatar</option>
+                        <option value="Russia">Russia</option>
+                        <option value="South Africa">South Africa</option>
+                        <option value="South Korea">South Korea</option>
+                        <option value="Spain">Spain</option>
+                        <option value="Sri Lanka">Sri Lanka</option>
+                        <option value="Sweden">Sweden</option>
+                        <option value="Switzerland">Switzerland</option>
+                        <option value="Taiwan">Taiwan</option>
+                        <option value="Thailand">Thailand</option>
+                        <option value="Turkey">Turkey</option>
+                        <option value="Vietnam">Vietnam</option>
+                        <option value="Other">Other Country (Specify below)</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Enquiry Type *</label>
+                    <select name="enquiry_type" className="premium-dark-input" required>
+                      <option value="" disabled selected style={{ color: '#6B7C8E' }}>Select Service Type</option>
+                      <option value="Agro & Food Products">Rice & Agro Exports (Basmati, Potatoes, Onions)</option>
+                      <option value="Eco Jute & Shopping Bags">Eco Jute & Cotton Shopping Bags</option>
+                      <option value="Traditional Handicrafts">Indian Traditional Handicrafts & Decor</option>
+                      <option value="B2B Sourcing / Bulk OEM">Bulk Custom B2B Sourcing / OEM</option>
+                      <option value="General Trade Inquiry">General Export/Partnership Inquiry</option>
+                    </select>
+                  </div>
                 </div>
 
-                <div style={{ marginBottom: '35px' }}>
-                  <label style={{ display: 'block', marginBottom: '10px', fontWeight: '600', color: 'var(--navy-blue)', fontSize: '0.9rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Order Details & Requirements *</label>
-                  <textarea name="message" style={{ width: '100%', padding: '20px', borderRadius: '12px', border: '1px solid #E2E8F0', background: '#F8FAFC', outline: 'none', transition: 'all 0.3s', minHeight: '180px', resize: 'vertical', fontSize: '1rem' }} placeholder="Please specify the products, required quantity (e.g., 2x40ft FCL), packaging preferences, and target port..." required></textarea>
+                <div>
+                  <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Message / Requirements *</label>
+                  <textarea name="message" className="premium-dark-input" style={{ minHeight: '130px', resize: 'vertical' }} placeholder="Tell us about your requirements..." required></textarea>
                 </div>
                 
-                <button type="submit" disabled={isSubmitting} className="btn btn-primary" style={{ width: '100%', padding: '20px', fontSize: '1.2rem', display: 'flex', justifyContent: 'center', gap: '10px', borderRadius: '15px', opacity: isSubmitting ? 0.7 : 1, cursor: isSubmitting ? 'not-allowed' : 'pointer' }}>
-                  {isSubmitting ? 'Sending Request...' : 'Send Official Inquiry'} <Send size={20} />
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting} 
+                  style={{
+                    width: '100%',
+                    padding: '20px',
+                    fontSize: '1.1rem',
+                    fontWeight: '800',
+                    textTransform: 'uppercase',
+                    letterSpacing: '2px',
+                    color: '#0B131D',
+                    background: '#E5B834',
+                    border: 'none',
+                    borderRadius: '12px',
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    gap: '10px',
+                    transition: 'all 0.3s ease',
+                    boxShadow: '0 4px 15px rgba(229, 184, 52, 0.2)',
+                    opacity: isSubmitting ? 0.7 : 1
+                  }}
+                >
+                  {isSubmitting ? 'Sending Enquiry...' : 'Send Enquiry'} <Send size={18} />
                 </button>
               </form>
             )}

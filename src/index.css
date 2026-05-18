@@ -535,3 +535,36 @@ ul {
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
   overflow: hidden;
 }
+
+/* Premium Dark Form Inputs styling */
+.premium-dark-input {
+  width: 100%;
+  padding: 16px 20px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  background: #1C2B3A;
+  color: #FFFFFF;
+  outline: none;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-sizing: border-box;
+}
+
+.premium-dark-input::placeholder {
+  color: #6B7C8E;
+}
+
+.premium-dark-input:focus {
+  border-color: var(--accent-gold) !important;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.15) !important;
+  background: #223547 !important;
+}
+
+select.premium-dark-input {
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23d4af37' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 20px center;
+  background-size: 16px;
+  padding-right: 45px;
+}
