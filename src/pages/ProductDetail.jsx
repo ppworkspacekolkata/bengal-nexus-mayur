@@ -24,8 +24,8 @@ const productDB = {
       shelfLife: "60 Days from loading"
     },
     packaging: ["10kg / 25kg / 50kg Mesh Bags", "Jute Bags", "Custom Branded Packaging"],
-    moq: "1 x 20' FCL (Approx. 14 Metric Tons)",
-    port: "Kolkata / Haldia / Mumbai"
+    moq: "As per buyer requirement",
+    port: "Kolkata / Haldia"
   },
   "red-onions": {
     name: "Indian Red Onions",
@@ -40,8 +40,8 @@ const productDB = {
       shelfLife: "3-4 Months under optimum conditions"
     },
     packaging: ["5kg / 10kg / 25kg Mesh Bags", "Jute Bags"],
-    moq: "1 x 20' FCL",
-    port: "Mumbai / Kolkata"
+    moq: "As per buyer requirement",
+    port: "Kolkata / Haldia"
   },
   "basmati-rice": {
     name: "1121 Premium Basmati Rice",
@@ -56,8 +56,8 @@ const productDB = {
       origin: "Punjab / Haryana, India"
     },
     packaging: ["5kg / 10kg / 25kg Non-Woven Bags", "PP Bags", "Vacuum Packs"],
-    moq: "1 x 20' FCL (Approx. 24 Metric Tons)",
-    port: "Mundra / Kandla"
+    moq: "As per buyer requirement",
+    port: "Kolkata / Haldia"
   },
   "bengal-handicraft": {
     name: "Authentic Bengal Handicrafts",
@@ -72,7 +72,7 @@ const productDB = {
       customization: "Available for Bulk Orders"
     },
     packaging: ["Export Standard Carton Boxes", "Moisture-proof Wrapping", "Individual Retail Packaging Available"],
-    moq: "500 Pieces (Mixed Variety Allowed)",
+    moq: "As per buyer requirement",
     port: "Kolkata / Haldia"
   }
 };

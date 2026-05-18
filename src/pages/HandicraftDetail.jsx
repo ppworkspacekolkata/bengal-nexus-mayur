@@ -24,7 +24,7 @@ const handicraftDB = {
       certification: "Biodegradable & Eco-Friendly"
     },
     packaging: ["50-100 pcs per Export Carton", "Moisture-proof inner poly liner", "Custom Retail Tags Available"],
-    moq: "1000 Pieces",
+    moq: "As per buyer requirement",
     port: "Kolkata / Haldia"
   },
   "terracotta": {
@@ -40,7 +40,7 @@ const handicraftDB = {
       finish: "Natural Matte Red/Brown"
     },
     packaging: ["Individual Bubble Wrap", "Thermocol / Styrofoam custom casing", "Heavy-duty Wooden Crates for Bulk"],
-    moq: "100 Pieces (Mixed designs allowed)",
+    moq: "As per buyer requirement",
     port: "Kolkata / Haldia"
   },
   "dokra-art": {
@@ -56,7 +56,7 @@ const handicraftDB = {
       finish: "Antique / Rustic Gold"
     },
     packaging: ["Soft tissue wrapping", "Individual gift boxes", "Export-grade Master Cartons"],
-    moq: "50 Pieces",
+    moq: "As per buyer requirement",
     port: "Kolkata / Haldia"
   },
   "kantha-stitch": {
@@ -72,8 +72,8 @@ const handicraftDB = {
       care: "Dry Clean / Gentle Hand Wash"
     },
     packaging: ["Individual Polybags", "Premium Brand Boxes available", "Waterproof Export Cartons"],
-    moq: "100 Pieces",
-    port: "Kolkata / Mumbai"
+    moq: "As per buyer requirement",
+    port: "Kolkata / Haldia"
   }
 };
 

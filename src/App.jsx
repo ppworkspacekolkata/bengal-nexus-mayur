@@ -14,6 +14,8 @@ import ProductDetail from './pages/ProductDetail';
 import Handicrafts from './pages/Handicrafts';
 import HandicraftDetail from './pages/HandicraftDetail';
 import Contact from './pages/Contact';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsConditions from './pages/TermsConditions';
 
 function App() {
   const location = useLocation();
@@ -30,6 +32,8 @@ function App() {
           <Route path="/handicrafts" element={<Handicrafts />} />
           <Route path="/handicraft/:id" element={<HandicraftDetail />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-conditions" element={<TermsConditions />} />
         </Routes>
       </AnimatePresence>
       <Footer />

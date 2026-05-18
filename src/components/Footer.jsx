@@ -102,8 +102,8 @@ export default function Footer() {
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'space-between', alignItems: 'center', paddingTop: '30px', borderTop: '1px solid rgba(255,255,255,0.1)', color: '#A0AAB2', fontSize: '0.95rem' }}>
           <p>&copy; {new Date().getFullYear()} Bengal Nexus Exports. All rights reserved.</p>
           <div style={{ display: 'flex', gap: '20px' }}>
-            <Link to="#" style={{ color: '#A0AAB2' }}>Privacy Policy</Link>
-            <Link to="#" style={{ color: '#A0AAB2' }}>Terms of Service</Link>
+            <Link to="/privacy-policy" style={{ color: '#A0AAB2' }}>Privacy Policy</Link>
+            <Link to="/terms-conditions" style={{ color: '#A0AAB2' }}>Terms of Service</Link>
           </div>
         </div>
       </div>
