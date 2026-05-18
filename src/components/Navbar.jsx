@@ -4,16 +4,19 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Menu, X, Phone, Mail, MapPin } from 'lucide-react';
 
 export default function Navbar() {
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 30);
+      setScrollY(window.scrollY);
     };
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+  const isScrolled = scrollY > 30;
+  const dynamicTop = Math.max(0, 35 - scrollY);
 
   return (
     <>
@@ -32,7 +35,7 @@ export default function Navbar() {
 
       {/* Main Navbar */}
       <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`} style={{
-        top: isScrolled ? '0' : '35px',
+        top: `${dynamicTop}px`,
         padding: isScrolled ? '15px 0' : '20px 0'
       }}>
         <div className="container nav-container">

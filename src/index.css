@@ -191,7 +191,7 @@ ul {
   -webkit-backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--glass-border);
   z-index: 1000;
-  transition: all 0.3s ease;
+  transition: padding 0.3s ease, background 0.3s ease, border-bottom 0.3s ease, backdrop-filter 0.3s ease;
 }
 
 .nav-container {
