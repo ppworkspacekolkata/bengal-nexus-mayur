@@ -2,7 +2,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import { Leaf, ShieldCheck, Truck, ArrowRight, Globe, CheckCircle, BarChart3, Star } from 'lucide-react';
-import Scene3D from '../components/Scene3D';
 
 const pageVariants = {
   initial: { opacity: 0 },
@@ -61,15 +60,99 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* 3D Visual Column */}
+            {/* Animated Heritage Kolkata / Victoria Memorial Visual */}
             <motion.div 
-              initial={{ opacity: 0, scale: 0.8 }}
+              initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.4, duration: 1 }}
-              style={{ width: '100%', height: '500px', position: 'relative' }}
+              style={{ width: '100%', height: '500px', position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
               className="hero-3d-visual"
             >
-              <Scene3D />
+              {/* Floating Glowing Aura */}
+              <div style={{ position: 'absolute', top: '10%', left: '10%', width: '80%', height: '80%', background: 'radial-gradient(circle, rgba(229,184,52,0.15) 0%, rgba(10,92,54,0.05) 50%, transparent 70%)', filter: 'blur(30px)', zIndex: 0 }}></div>
+
+              {/* Main Animated Photo Frame */}
+              <motion.div 
+                animate={{ y: [0, -12, 0] }}
+                transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
+                style={{
+                  position: 'relative',
+                  width: '90%',
+                  maxWidth: '480px',
+                  height: '360px',
+                  borderRadius: '24px',
+                  overflow: 'hidden',
+                  boxShadow: '0 25px 50px -12px rgba(17, 28, 39, 0.25), 0 0 40px rgba(229, 184, 52, 0.15)',
+                  border: '2px solid rgba(229, 184, 52, 0.3)',
+                  zIndex: 2
+                }}
+              >
+                <img 
+                  src="/assets/victoria_memorial.png" 
+                  alt="Victoria Memorial Kolkata Heritage" 
+                  style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.02)' }} 
+                />
+                {/* Dark overlay for rich premium feel */}
+                <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(17, 28, 39, 0.5) 0%, transparent 60%)' }}></div>
+                
+                {/* Floating badge inside image */}
+                <div style={{ position: 'absolute', bottom: '20px', left: '20px', background: 'rgba(17, 28, 39, 0.85)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', padding: '10px 18px', borderRadius: '30px', color: 'white', display: 'flex', alignItems: 'center', gap: '8px' }}>
+                  <span style={{ width: '8px', height: '8px', borderRadius: '50%', backgroundColor: '#25D366', display: 'inline-block' }}></span>
+                  <span style={{ fontSize: '0.85rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>Kolkata Source Port</span>
+                </div>
+              </motion.div>
+
+              {/* Decorative Floating Badges (Parallax depth effect) */}
+              <motion.div 
+                animate={{ y: [0, 8, 0], x: [0, -4, 0] }}
+                transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 0.5 }}
+                style={{
+                  position: 'absolute',
+                  top: '15%',
+                  right: '5%',
+                  background: 'white',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.12)',
+                  borderRadius: '16px',
+                  padding: '12px 20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  zIndex: 3,
+                  border: '1px solid var(--border-color)'
+                }}
+              >
+                <div style={{ background: 'rgba(229, 184, 52, 0.1)', color: 'var(--accent-gold)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: 'bold', fontSize: '0.85rem' }}>★</div>
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', color: 'var(--navy-blue)', margin: 0, fontWeight: '800' }}>Heritage Quality</h4>
+                  <p style={{ fontSize: '0.7rem', color: 'var(--text-muted)', margin: 0 }}>Export Standard</p>
+                </div>
+              </motion.div>
+
+              <motion.div 
+                animate={{ y: [0, -8, 0], x: [0, 4, 0] }}
+                transition={{ repeat: Infinity, duration: 4.5, ease: "easeInOut", delay: 1 }}
+                style={{
+                  position: 'absolute',
+                  bottom: '10%',
+                  left: '5%',
+                  background: 'var(--navy-blue)',
+                  boxShadow: '0 20px 40px rgba(0,0,0,0.2)',
+                  borderRadius: '16px',
+                  padding: '12px 20px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '10px',
+                  zIndex: 3,
+                  border: '1px solid rgba(255,255,255,0.05)',
+                  color: 'white'
+                }}
+              >
+                <div style={{ background: 'rgba(10, 92, 54, 0.2)', color: 'var(--primary-green)', width: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✓</div>
+                <div>
+                  <h4 style={{ fontSize: '0.85rem', color: 'white', margin: 0, fontWeight: '800' }}>100% Reliable</h4>
+                  <p style={{ fontSize: '0.7rem', color: '#A0AAB2', margin: 0 }}>Assured Logistics</p>
+                </div>
+              </motion.div>
             </motion.div>
           </div>
         </div>
@@ -90,10 +173,8 @@ export default function Home() {
         <div className="container">
           <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'space-around', gap: '40px', textAlign: 'center' }}>
             {[
-              { num: "20+", label: "Countries Served", icon: <Globe size={32} color="var(--accent-gold)" /> },
               { num: "100%", label: "Quality Assurance", icon: <ShieldCheck size={32} color="var(--accent-gold)" /> },
-              { num: "50+", label: "Farming Partners", icon: <Leaf size={32} color="var(--accent-gold)" /> },
-              { num: "5K+", label: "Tons Exported", icon: <BarChart3 size={32} color="var(--accent-gold)" /> }
+              { num: "50+", label: "Farming Partners", icon: <Leaf size={32} color="var(--accent-gold)" /> }
             ].map((stat, i) => (
               <motion.div 
                 key={i} 
@@ -272,8 +353,7 @@ export default function Home() {
             {[
               { name: "APEDA Certified", desc: "Registered with Agricultural and Processed Food Products Export Development Authority of India." },
               { name: "FSSAI Approved", desc: "Compliant with Food Safety and Standards Authority of India for all agricultural exports." },
-              { name: "Phytosanitary Cleared", desc: "All shipments undergo strict phytosanitary checks to prevent pest propagation." },
-              { name: "ISO 9001:2015", desc: "Quality management systems ensuring consistent products and services that meet regulatory requirements." }
+              { name: "Phytosanitary Cleared", desc: "All shipments undergo strict phytosanitary checks to prevent pest propagation." }
             ].map((cert, i) => (
               <motion.div 
                 key={i}

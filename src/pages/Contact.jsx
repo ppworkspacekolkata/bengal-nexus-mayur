@@ -87,7 +87,7 @@ export default function Contact() {
               <div style={{ width: '32px', height: '32px', borderRadius: '50%', background: 'rgba(229, 184, 52, 0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#E5B834' }}>
                 <Award size={18} />
               </div>
-              <span>ISO 9001:2015 CERTIFIED</span>
+              <span>PREMIUM QUALITY ASSURED</span>
             </div>
           </div>
 
@@ -137,8 +137,8 @@ export default function Contact() {
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px' }}>
                   <div>
                     <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Destination Country *</label>
-                    <select name="country" className="premium-dark-input" required>
-                      <option value="" disabled selected style={{ color: '#6B7C8E' }}>Select Country</option>
+                    <select name="country" className="premium-dark-input" defaultValue="" required>
+                      <option value="" disabled style={{ color: '#6B7C8E' }}>Select Country</option>
                       <optgroup label="Popular Destinations" style={{ background: '#121E2C', color: '#E5B834' }}>
                         <option value="United States">United States (USA)</option>
                         <option value="United Arab Emirates">United Arab Emirates (UAE)</option>
@@ -208,8 +208,8 @@ export default function Contact() {
                   </div>
                   <div>
                     <label style={{ display: 'block', marginBottom: '8px', fontWeight: '700', color: '#E5B834', fontSize: '0.8rem', textTransform: 'uppercase', letterSpacing: '1px' }}>Enquiry Type *</label>
-                    <select name="enquiry_type" className="premium-dark-input" required>
-                      <option value="" disabled selected style={{ color: '#6B7C8E' }}>Select Service Type</option>
+                    <select name="enquiry_type" className="premium-dark-input" defaultValue="" required>
+                      <option value="" disabled style={{ color: '#6B7C8E' }}>Select Service Type</option>
                       <option value="Agro & Food Products">Rice & Agro Exports (Basmati, Potatoes, Onions)</option>
                       <option value="Eco Jute & Shopping Bags">Eco Jute & Cotton Shopping Bags</option>
                       <option value="Traditional Handicrafts">Indian Traditional Handicrafts & Decor</option>
