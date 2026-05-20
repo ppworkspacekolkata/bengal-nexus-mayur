@@ -297,6 +297,8 @@ export default function Home() {
         </div>
       </section>
 
+      <GallerySection />
+
       {/* Export Process Timeline */}
       <section className="section section-bg pt-120 pb-120">
         <div className="container">
@@ -376,3 +378,118 @@ export default function Home() {
     </motion.div>
   );
 }
+
+function GallerySection() {
+  const [imageStates, setImageStates] = React.useState(
+    Array.from({ length: 20 }, (_, i) => ({
+      index: i + 1,
+      ext: 'jpeg',
+      failed: false
+    }))
+  );
+  
+  const [selectedImage, setSelectedImage] = React.useState(null);
+
+  const handleImageError = (index) => {
+    setImageStates(prev => prev.map(img => {
+      if (img.index === index) {
+        if (img.ext === 'jpeg') {
+          return { ...img, ext: 'jpg' };
+        } else if (img.ext === 'jpg') {
+          return { ...img, ext: 'png' };
+        } else if (img.ext === 'png') {
+          return { ...img, ext: 'webp' };
+        } else {
+          return { ...img, failed: true };
+        }
+      }
+      return img;
+    }));
+  };
+
+  const visibleImages = imageStates.filter(img => !img.failed);
+
+  return (
+    <section className="section" style={{ background: 'white', padding: '100px 0', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
+      <div className="container">
+        <div style={{ textAlign: 'center', marginBottom: '60px' }}>
+          <span style={{ color: 'var(--primary-green)', fontWeight: '700', letterSpacing: '2px', textTransform: 'uppercase' }}>Visual Showcase</span>
+          <h2 className="section-title" style={{ marginTop: '10px' }}>Export Operations Gallery</h2>
+          <p className="section-subtitle" style={{ margin: '15px auto 0', maxWidth: '600px' }}>
+            A real-time glimpse of our premium quality agricultural produce, advanced sorting processes, and global logistics operations.
+          </p>
+        </div>
+
+        {visibleImages.length === 0 ? (
+          <div style={{ textAlign: 'center', padding: '40px', background: 'var(--bg-offwhite)', borderRadius: '24px', color: 'var(--text-muted)' }}>
+            No gallery images found. Place images named 1, 2, 3, etc. in your public/assets/gallery/nexun/ folder.
+          </div>
+        ) : (
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px' }}>
+            {visibleImages.map((img, idx) => {
+              const src = `/assets/gallery/nexun/${img.index}.${img.ext}`;
+              return (
+                <motion.div
+                  key={img.index}
+                  className="gallery-card"
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: (idx % 4) * 0.1 }}
+                  whileHover={{ y: -8 }}
+                  style={{ cursor: 'pointer', borderRadius: '24px', overflow: 'hidden', boxShadow: '0 15px 35px rgba(0,0,0,0.05)', border: '1px solid var(--border-color)', height: '260px', position: 'relative' }}
+                  onClick={() => setSelectedImage(src)}
+                >
+                  <img
+                    src={src}
+                    alt={`Gallery Image ${img.index}`}
+                    onError={() => handleImageError(img.index)}
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
+                    className="gallery-img-hover"
+                  />
+                  {/* Hover Overlay */}
+                  <div 
+                    className="gallery-overlay"
+                    style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(17, 28, 39, 0.75) 0%, rgba(10, 92, 54, 0.2) 100%)', opacity: 0, transition: 'opacity 0.3s ease', display: 'flex', alignItems: 'center', justifyContent: 'center' }}
+                  >
+                    <div style={{ color: 'white', border: '1px solid white', padding: '10px 20px', borderRadius: '30px', fontSize: '0.9rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>
+                      View Fullscreen
+                    </div>
+                  </div>
+                  
+                  {/* Floating badge/index */}
+                  <div style={{ position: 'absolute', bottom: '15px', left: '15px', background: 'rgba(255, 255, 255, 0.95)', color: 'var(--navy-blue)', fontSize: '0.8rem', fontWeight: '800', padding: '5px 12px', borderRadius: '12px', boxShadow: '0 5px 10px rgba(0,0,0,0.1)' }}>
+                    Image #{img.index}
+                  </div>
+                </motion.div>
+              );
+            })}
+          </div>
+        )}
+      </div>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div 
+          style={{ position: 'fixed', inset: 0, background: 'rgba(17, 28, 39, 0.95)', zIndex: 1000, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '20px' }}
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            style={{ position: 'absolute', top: '30px', right: '30px', background: 'transparent', border: 'none', color: 'white', fontSize: '2.5rem', cursor: 'pointer', outline: 'none' }}
+            onClick={() => setSelectedImage(null)}
+          >
+            &times;
+          </button>
+          <motion.img 
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            src={selectedImage} 
+            alt="Gallery Fullscreen" 
+            style={{ maxWidth: '90%', maxHeight: '85vh', borderRadius: '20px', boxShadow: '0 25px 50px rgba(0,0,0,0.5)', objectFit: 'contain', border: '2px solid rgba(255, 255, 255, 0.1)' }} 
+          />
+        </div>
+      )}
+    </section>
+  );
+}
+

@@ -568,3 +568,11 @@ select.premium-dark-input {
   background-size: 16px;
   padding-right: 45px;
 }
+
+/* Gallery Hover Animations */
+.gallery-card:hover .gallery-img-hover {
+  transform: scale(1.08);
+}
+.gallery-card:hover .gallery-overlay {
+  opacity: 1 !important;
+}
