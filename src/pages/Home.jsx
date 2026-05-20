@@ -254,7 +254,7 @@ export default function Home() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', position: 'relative', zIndex: 1 }}>
             {[
-              { id: "fresh-potatoes", name: "Fresh Potatoes", image: "/assets/fresh_potatoes.png", desc: "Premium grade potatoes, carefully sorted for size and quality." },
+              { id: "fresh-potatoes", name: "Fresh Potatoes", image: "/assets/fresh_potatoes.jpg", desc: "Premium grade potatoes, carefully sorted for size and quality." },
               { id: "red-onions", name: "Red Onions", image: "/assets/red_onions.png", desc: "Rich flavor, low moisture red onions with long shelf life." },
               { id: "basmati-rice", name: "Basmati Rice", image: "/assets/basmati_rice.png", desc: "Extra long grain, highly aromatic premium Indian Basmati." }
             ].map((prod, i) => (
@@ -455,11 +455,6 @@ function GallerySection() {
                     <div style={{ color: 'white', border: '1px solid white', padding: '10px 20px', borderRadius: '30px', fontSize: '0.9rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>
                       View Fullscreen
                     </div>
-                  </div>
-                  
-                  {/* Floating badge/index */}
-                  <div style={{ position: 'absolute', bottom: '15px', left: '15px', background: 'rgba(255, 255, 255, 0.95)', color: 'var(--navy-blue)', fontSize: '0.8rem', fontWeight: '800', padding: '5px 12px', borderRadius: '12px', boxShadow: '0 5px 10px rgba(0,0,0,0.1)' }}>
-                    Image #{img.index}
                   </div>
                 </motion.div>
               );

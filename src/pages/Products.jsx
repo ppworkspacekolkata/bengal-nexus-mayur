@@ -10,7 +10,7 @@ const pageVariants = {
 };
 
 const products = [
-  { id: "fresh-potatoes", name: "Fresh Potatoes", image: "/assets/fresh_potatoes.png", desc: "Premium export-quality Indian potatoes, ideal for all culinary uses." },
+  { id: "fresh-potatoes", name: "Fresh Potatoes", image: "/assets/fresh_potatoes.jpg", desc: "Premium export-quality Indian potatoes, ideal for all culinary uses." },
   { id: "red-onions", name: "Red Onions", image: "/assets/red_onions.png", desc: "Richly flavored red onions with long shelf life, perfect for export." },
   { id: "basmati-rice", name: "Basmati Rice", image: "/assets/basmati_rice.png", desc: "Long-grain, aromatic basmati rice known for its premium quality." },
   { id: "bengal-handicraft", name: "Bengal Handicraft", image: "https://images.unsplash.com/photo-1623864770284-9118c7bc772a?auto=format&fit=crop&w=600&q=80", desc: "Eco-friendly jute bags and authentic artisanal crafts from Bengal." }

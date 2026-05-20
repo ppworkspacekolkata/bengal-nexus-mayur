@@ -14,7 +14,7 @@ const productDB = {
   "fresh-potatoes": {
     name: "Premium Fresh Potatoes",
     tagline: "High-grade Indian potatoes sorted for universal culinary excellence.",
-    image: "/assets/fresh_potatoes.png",
+    image: "/assets/fresh_potatoes.jpg",
     description: "Our export-grade fresh potatoes are cultivated in the most fertile regions of India. We employ strict grading parameters to ensure uniform size, smooth skin, and low moisture content, making them ideal for long sea transit and extended shelf life.",
     specs: {
       variety: "Jyoti / Pukhraj / LR",

@@ -41,7 +41,7 @@ export default function Handicrafts() {
     }));
   };
 
-  const visibleImages = imageStates.filter(img => !img.failed);
+  const visibleImages = imageStates.filter(img => !img.failed && img.index !== 2);
 
   return (
     <motion.div 
@@ -128,9 +128,6 @@ export default function Handicrafts() {
                       <div style={{ color: 'white', border: '1px solid white', padding: '10px 20px', borderRadius: '30px', fontSize: '0.85rem', fontWeight: '700', letterSpacing: '1px', textTransform: 'uppercase' }}>
                         View Fullscreen
                       </div>
-                    </div>
-                    <div style={{ position: 'absolute', top: '20px', right: '20px', background: 'var(--navy-blue)', color: 'white', padding: '6px 14px', borderRadius: '20px', fontSize: '0.8rem', fontWeight: '600', zIndex: 2 }}>
-                      #{img.index}
                     </div>
                   </div>
                   
