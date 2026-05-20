@@ -407,7 +407,7 @@ function GallerySection() {
     }));
   };
 
-  const visibleImages = imageStates.filter(img => !img.failed);
+  const visibleImages = imageStates.filter(img => !img.failed).slice(0, 6);
 
   return (
     <section className="section" style={{ background: 'white', padding: '100px 0', borderTop: '1px solid var(--border-color)', borderBottom: '1px solid var(--border-color)' }}>
@@ -425,7 +425,7 @@ function GallerySection() {
             No gallery images found. Place images named 1, 2, 3, etc. in your public/assets/gallery/nexun/ folder.
           </div>
         ) : (
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '25px' }}>
+          <div className="gallery-grid">
             {visibleImages.map((img, idx) => {
               const src = `/assets/gallery/nexun/${img.index}.${img.ext}`;
               return (
