@@ -41,7 +41,7 @@ export default function Handicrafts() {
     }));
   };
 
-  const visibleImages = imageStates.filter(img => !img.failed && img.index !== 2);
+  const visibleImages = imageStates.filter(img => !img.failed && ![2, 8, 9, 10, 11].includes(img.index));
 
   return (
     <motion.div 
