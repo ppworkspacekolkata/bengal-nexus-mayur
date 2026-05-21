@@ -194,11 +194,11 @@ const getGalleryItemTitle = (index) => {
     15: "Natural Materials Display",
     16: "Handicrafts Quality Check",
     17: "Global Logistical Packing",
-    18: "Handwoven Jute Baskets",
-    19: "Traditional Bengal Terracotta",
-    20: "Artisan Brass Dokra Art",
-    21: "Embroidered Kantha Craft",
-    22: "Premium Handicraft Packaging"
+    18: "Global Sea Freight Logistics",
+    19: "Direct Farm Sourcing",
+    20: "Wholesale Onion Packaging",
+    21: "Export Container Terminal",
+    22: "Premium Fresh Red Onions"
   };
   return titles[index] || `Bengal Heritage Collection #${index}`;
 };
@@ -222,11 +222,11 @@ const getGalleryItemDesc = (index) => {
     15: "Sourcing premium organic fibers directly from regional farmers.",
     16: "Comprehensive final inspection ensuring zero-defect export consignments.",
     17: "Shock-proof shipping packages destined for global international harbors.",
-    18: "Sturdy and stylish handwoven jute storage baskets, perfect for modern home decor.",
-    19: "Intricately detailed clay crafts handmade by regional potters from rural Bengal.",
-    20: "Exquisite decorative metal figurines handcrafted using ancient lost-wax casting.",
-    21: "Colorful hand-stitched textile tapestries showcasing unique artisan designs.",
-    22: "Eco-friendly custom packaging designed to protect and present handicrafts."
+    18: "Direct loading of export shipments at Kolkata Port, ensuring timely maritime transit.",
+    19: "Fresh agricultural produce harvested directly from local West Bengal farms for export.",
+    20: "Sacks of premium quality red onions graded and stacked for bulk export shipment.",
+    21: "Advanced container shipping terminals handling global distributions efficiently.",
+    22: "Export-grade red onions with deep color and high shelf-life, ready for transport."
   };
   return descs[index] || "Export-grade premium handicrafts and commodities sourced directly from rural Bengal.";
 };
