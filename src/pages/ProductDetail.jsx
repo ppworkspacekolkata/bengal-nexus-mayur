@@ -14,7 +14,7 @@ const productDB = {
   "fresh-potatoes": {
     name: "Premium Fresh Potatoes",
     tagline: "High-grade Indian potatoes sorted for universal culinary excellence.",
-    image: "/assets/fresh_potatoes.jpg",
+    image: "/assets/fresh_potatoes.png",
     description: "Our export-grade fresh potatoes are cultivated in the most fertile regions of India. We employ strict grading parameters to ensure uniform size, smooth skin, and low moisture content, making them ideal for long sea transit and extended shelf life.",
     specs: {
       variety: "Jyoti / Pukhraj / LR",
@@ -44,7 +44,7 @@ const productDB = {
     port: "Kolkata / Haldia"
   },
   "basmati-rice": {
-    name: "1121 Premium Basmati Rice",
+    name: "Premium Basmati Rice",
     tagline: "Extra-long grain, highly aromatic authentic Indian Basmati.",
     image: "/assets/basmati_rice.png",
     description: "Aged to perfection, our 1121 Basmati Rice is the pinnacle of Indian rice exports. Known for its extraordinary length after cooking and sweet aroma, it is the preferred choice for premium restaurants and retail brands worldwide.",

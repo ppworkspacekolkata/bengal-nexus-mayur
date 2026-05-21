@@ -254,7 +254,7 @@ export default function Home() {
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '40px', position: 'relative', zIndex: 1 }}>
             {[
-              { id: "fresh-potatoes", name: "Fresh Potatoes", image: "/assets/fresh_potatoes.jpg", desc: "Premium grade potatoes, carefully sorted for size and quality." },
+              { id: "fresh-potatoes", name: "Fresh Potatoes", image: "/assets/fresh_potatoes.png", desc: "Premium grade potatoes, carefully sorted for size and quality." },
               { id: "red-onions", name: "Red Onions", image: "/assets/red_onions.png", desc: "Rich flavor, low moisture red onions with long shelf life." },
               { id: "basmati-rice", name: "Basmati Rice", image: "/assets/basmati_rice.png", desc: "Extra long grain, highly aromatic premium Indian Basmati." }
             ].map((prod, i) => (
@@ -381,7 +381,7 @@ export default function Home() {
 
 function GallerySection() {
   const [imageStates, setImageStates] = React.useState(
-    Array.from({ length: 20 }, (_, i) => ({
+    Array.from({ length: 22 }, (_, i) => ({
       index: i + 1,
       ext: 'jpeg',
       failed: false

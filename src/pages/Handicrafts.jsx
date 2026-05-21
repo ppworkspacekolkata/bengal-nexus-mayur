@@ -11,7 +11,7 @@ const pageVariants = {
 
 export default function Handicrafts() {
   const [imageStates, setImageStates] = React.useState(
-    Array.from({ length: 20 }, (_, i) => ({
+    Array.from({ length: 22 }, (_, i) => ({
       index: i + 1,
       ext: 'jpeg',
       failed: false
@@ -193,7 +193,12 @@ const getGalleryItemTitle = (index) => {
     14: "Kantha Stitch Textile Art",
     15: "Natural Materials Display",
     16: "Handicrafts Quality Check",
-    17: "Global Logistical Packing"
+    17: "Global Logistical Packing",
+    18: "Handwoven Jute Baskets",
+    19: "Traditional Bengal Terracotta",
+    20: "Artisan Brass Dokra Art",
+    21: "Embroidered Kantha Craft",
+    22: "Premium Handicraft Packaging"
   };
   return titles[index] || `Bengal Heritage Collection #${index}`;
 };
@@ -216,7 +221,12 @@ const getGalleryItemDesc = (index) => {
     14: "Delicate needlework patterns detailing rich cultural stories.",
     15: "Sourcing premium organic fibers directly from regional farmers.",
     16: "Comprehensive final inspection ensuring zero-defect export consignments.",
-    17: "Shock-proof shipping packages destined for global international harbors."
+    17: "Shock-proof shipping packages destined for global international harbors.",
+    18: "Sturdy and stylish handwoven jute storage baskets, perfect for modern home decor.",
+    19: "Intricately detailed clay crafts handmade by regional potters from rural Bengal.",
+    20: "Exquisite decorative metal figurines handcrafted using ancient lost-wax casting.",
+    21: "Colorful hand-stitched textile tapestries showcasing unique artisan designs.",
+    22: "Eco-friendly custom packaging designed to protect and present handicrafts."
   };
   return descs[index] || "Export-grade premium handicrafts and commodities sourced directly from rural Bengal.";
 };
