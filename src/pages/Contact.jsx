@@ -17,18 +17,17 @@ export default function Contact() {
     setIsSubmitting(true);
     
     const formData = new FormData(e.target);
-    
-    // IMPORTANT: To make this work, replace YOUR_WEB3FORMS_ACCESS_KEY below with a real key from web3forms.com
-    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY");
+    formData.append("_subject", "New B2B Export Inquiry from Website");
+    formData.append("_captcha", "false");
     
     try {
-      const response = await fetch("https://api.web3forms.com/submit", {
+      const response = await fetch("https://formsubmit.co/ajax/bengalnexusexports@gmail.com", {
         method: "POST",
         body: formData
       });
       
       const data = await response.json();
-      if (data.success) {
+      if (data.success === "true" || data.success === true) {
         setIsSuccess(true);
         e.target.reset();
       } else {
@@ -107,10 +106,9 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-                {/* Web3Forms details */}
-                <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_ACCESS_KEY" />
-                <input type="hidden" name="subject" value="New B2B Export Inquiry from Website" />
-                <input type="hidden" name="from_name" value="Bengal Nexus Exports Portal" />
+                {/* FormSubmit details */}
+                <input type="hidden" name="_subject" value="New B2B Export Inquiry from Website" />
+                <input type="hidden" name="_captcha" value="false" />
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px' }}>
                   <div>
