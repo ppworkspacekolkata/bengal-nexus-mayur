@@ -17,21 +17,23 @@ export default function Contact() {
     setIsSubmitting(true);
     
     const formData = new FormData(e.target);
-    formData.append("_subject", "New B2B Export Inquiry from Website");
-    formData.append("_captcha", "false");
+    const dataObj = Object.fromEntries(formData.entries());
     
     try {
-      const response = await fetch("https://formsubmit.co/ajax/bengalnexusexports@gmail.com", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
-        body: formData
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(dataObj)
       });
       
       const data = await response.json();
-      if (data.success === "true" || data.success === true) {
+      if (data.success) {
         setIsSuccess(true);
         e.target.reset();
       } else {
-        alert("Something went wrong. Please try again.");
+        alert("Something went wrong: " + (data.error || "Please try again."));
       }
     } catch (error) {
       console.error(error);
