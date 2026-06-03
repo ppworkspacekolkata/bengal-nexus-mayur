@@ -71,7 +71,7 @@ ${message}
             
             <div style={{ position: 'relative', zIndex: 2 }}>
               <span style={{ color: '#E5B834', fontWeight: '700', fontSize: '0.85rem', letterSpacing: '2px', textTransform: 'uppercase', display: 'block', marginBottom: '15px' }}>Enquiry Portal</span>
-              <h3 style={{ fontSize: '2.5rem', fontWeight: '800', marginBottom: '20px', color: 'white', lineHeight: '1.2', fontFamily: 'serif' }}>Request a<br />Premium<br />Quote</h3>
+              <h3 style={{ fontSize: '2.2rem', fontWeight: '800', marginBottom: '20px', color: 'white', lineHeight: '1.2', fontFamily: 'serif' }}>Request a Premium Quote</h3>
               <p style={{ color: '#A0AAB2', fontSize: '1.05rem', lineHeight: '1.6', marginBottom: '40px', maxWidth: '300px' }}>Direct access to our specialists for volume exports and bespoke requirements.</p>
               
               <div style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
