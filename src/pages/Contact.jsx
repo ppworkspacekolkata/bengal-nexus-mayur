@@ -12,31 +12,42 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     
     const formData = new FormData(e.target);
+    const name = formData.get("name") || "";
+    const company = formData.get("company") || "N/A";
+    const email = formData.get("email") || "";
+    const whatsapp = formData.get("whatsapp") || "";
+    const country = formData.get("country") || "";
+    const enquiry_type = formData.get("enquiry_type") || "";
+    const message = formData.get("message") || "";
     
-    try {
-      const response = await fetch("https://formsubmit.co/ajax/bengalnexusexports@gmail.com", {
-        method: "POST",
-        body: formData
-      });
-      
-      const data = await response.json();
-      if (data.success === "true" || data.success === true) {
-        setIsSuccess(true);
-        e.target.reset();
-      } else {
-        alert("Something went wrong. Please try again.");
-      }
-    } catch (error) {
-      console.error(error);
-      alert("Network error. Please try again later.");
-    }
+    // Construct the WhatsApp message with clean formatting
+    const text = `*New B2B Export Inquiry*
+━━━━━━━━━━━━━━━━━━━━
+👤 *Name:* ${name}
+🏢 *Company:* ${company}
+✉️ *Email:* ${email}
+📞 *Phone/WhatsApp:* ${whatsapp}
+🌍 *Country:* ${country}
+💼 *Enquiry Type:* ${enquiry_type}
+📝 *Requirements:*
+${message}
+━━━━━━━━━━━━━━━━━━━━`;
+
+    const encodedText = encodeURIComponent(text);
+    const whatsappNumber = "919830540185"; // Owner's WhatsApp Number
+    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
     
+    setIsSuccess(true);
+    e.target.reset();
     setIsSubmitting(false);
+
+    // Open WhatsApp in a new tab
+    window.open(whatsappUrl, "_blank");
   };
 
   return (
@@ -104,10 +115,6 @@ export default function Contact() {
               </motion.div>
             ) : (
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
-                {/* FormSubmit details */}
-                <input type="hidden" name="_subject" value="New B2B Export Inquiry from Website" />
-                <input type="hidden" name="_honey" style={{ display: 'none' }} />
-                <input type="hidden" name="_template" value="table" />
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px' }}>
                   <div>

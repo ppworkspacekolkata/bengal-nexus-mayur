@@ -88,8 +88,8 @@ export default function Home() {
                 }}
               >
                 <img 
-                  src="/assets/victoria_memorial.png" 
-                  alt="Victoria Memorial Kolkata Heritage" 
+                  src="/assets/kolkata_port.png" 
+                  alt="Kolkata Port cargo ship export" 
                   style={{ width: '100%', height: '100%', objectFit: 'cover', transform: 'scale(1.02)' }} 
                 />
                 {/* Dark overlay for rich premium feel */}
