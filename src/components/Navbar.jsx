@@ -7,7 +7,6 @@ export default function Navbar() {
   const [scrollY, setScrollY] = useState(0);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [showContactDropdown, setShowContactDropdown] = useState(false);
-  const [isMobileContactOpen, setIsMobileContactOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -56,85 +55,64 @@ export default function Navbar() {
             <NavLink to="/about" className={({ isActive }) => isActive ? "active" : ""}>About Us</NavLink>
             <NavLink to="/products" className={({ isActive }) => isActive ? "active" : ""}>Products</NavLink>
             <NavLink to="/handicrafts" className={({ isActive }) => isActive ? "active" : ""}>Handicrafts</NavLink>
+            
+            {/* Click/Hover to reveal contact info underneath */}
             <div 
-              style={{ position: 'relative' }}
+              className="nav-contact-container"
+              style={{ position: 'relative', display: 'inline-block' }}
               onMouseEnter={() => setShowContactDropdown(true)}
               onMouseLeave={() => setShowContactDropdown(false)}
             >
               <NavLink 
                 to="/contact" 
                 className={({ isActive }) => isActive ? "active" : ""}
+                style={{ paddingBottom: '15px', marginBottom: '-15px' }}
                 onClick={(e) => {
-                  e.preventDefault();
                   setShowContactDropdown(!showContactDropdown);
                 }}
               >
                 Contact
               </NavLink>
-              
-              <AnimatePresence>
-                {showContactDropdown && (
-                  <motion.div 
-                    initial={{ opacity: 0, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: 10 }}
-                    style={{
-                      position: 'absolute',
-                      top: '100%',
-                      right: '50%',
-                      transform: 'translateX(50%)',
-                      background: 'white',
-                      boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
-                      borderRadius: '12px',
-                      padding: '20px',
-                      minWidth: '240px',
-                      zIndex: 1000,
-                      marginTop: '15px',
-                      border: '1px solid var(--border-color)',
-                      display: 'flex',
-                      flexDirection: 'column',
-                      gap: '15px',
-                      textAlign: 'left'
-                    }}
-                  >
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px' }}>
-                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Direct Phone</span>
-                      <a href="tel:+919830540185" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--navy-blue)', fontSize: '1.05rem', fontWeight: '800', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--primary-green)'} onMouseLeave={(e) => e.target.style.color = 'var(--navy-blue)'}>
-                        <Phone size={16} color="var(--primary-green)" /> +91 9830540185
-                      </a>
-                    </div>
-                    
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', borderTop: '1px solid var(--border-color)', paddingTop: '10px' }}>
-                      <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)', fontWeight: '700', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Email Address</span>
-                      <a href="mailto:bengalnexusexports@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--navy-blue)', fontSize: '0.9rem', fontWeight: '600', transition: 'color 0.2s' }} onMouseEnter={(e) => e.target.style.color = 'var(--primary-green)'} onMouseLeave={(e) => e.target.style.color = 'var(--navy-blue)'}>
-                        <Mail size={14} color="var(--primary-green)" /> bengalnexusexports@gmail.com
-                      </a>
-                    </div>
-                    
-                    <div style={{ borderTop: '1px solid var(--border-color)', paddingTop: '10px' }}>
-                      <Link 
-                        to="/contact" 
-                        onClick={() => setShowContactDropdown(false)}
-                        style={{
-                          display: 'block',
-                          textAlign: 'center',
-                          padding: '8px 12px',
-                          background: 'var(--navy-blue)',
-                          color: 'white',
-                          borderRadius: '8px',
-                          fontSize: '0.85rem',
-                          fontWeight: '700',
-                          textTransform: 'uppercase',
-                          letterSpacing: '0.5px'
-                        }}
-                      >
-                        Inquiry Form
-                      </Link>
-                    </div>
-                  </motion.div>
-                )}
-              </AnimatePresence>
+              {showContactDropdown && (
+                <div style={{
+                  position: 'absolute',
+                  top: '100%',
+                  left: '50%',
+                  transform: 'translateX(-50%)',
+                  background: 'white',
+                  boxShadow: '0 10px 30px rgba(0,0,0,0.15)',
+                  borderRadius: '12px',
+                  padding: '15px 20px',
+                  zIndex: 1000,
+                  minWidth: '200px',
+                  marginTop: '15px',
+                  border: '1px solid rgba(0,0,0,0.08)',
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '8px'
+                }}>
+                  <div style={{ 
+                    position: 'absolute', 
+                    top: '-8px', 
+                    left: '50%', 
+                    transform: 'translateX(-50%) rotate(45deg)', 
+                    width: '16px', 
+                    height: '16px', 
+                    background: 'white', 
+                    borderLeft: '1px solid rgba(0,0,0,0.08)', 
+                    borderTop: '1px solid rgba(0,0,0,0.08)',
+                    zIndex: 999
+                  }}></div>
+                  <a href="tel:+919830540185" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--navy-blue)', fontSize: '0.95rem', fontWeight: '700', textDecoration: 'none', transition: 'color 0.2s' }}>
+                    <Phone size={14} color="var(--primary-green)" /> +91 9830540185
+                  </a>
+                  <a href="mailto:bengalnexusexports@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '0.8rem', textDecoration: 'none', wordBreak: 'break-all', transition: 'color 0.2s' }}>
+                    <Mail size={12} color="var(--primary-green)" /> bengalnexusexports@gmail.com
+                  </a>
+                </div>
+              )}
             </div>
+            
             <Link to="/contact" className="btn btn-primary" style={{ padding: '12px 28px', fontSize: '0.95rem', borderRadius: '30px', fontWeight: '600', marginLeft: '10px' }}>Request Quote</Link>
           </div>
 
@@ -156,63 +134,15 @@ export default function Navbar() {
               <NavLink to="/about" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: '600', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>About Us</NavLink>
               <NavLink to="/products" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: '600', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>Products</NavLink>
               <NavLink to="/handicrafts" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: '600', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>Handicrafts</NavLink>
-              <div style={{ display: 'flex', flexDirection: 'column', borderBottom: '1px solid #eee', paddingBottom: isMobileContactOpen ? '15px' : '10px' }}>
-                <div 
-                  onClick={() => setIsMobileContactOpen(!isMobileContactOpen)} 
-                  style={{ 
-                    fontSize: '1.2rem', 
-                    fontWeight: '600', 
-                    display: 'flex', 
-                    justifyContent: 'space-between', 
-                    alignItems: 'center',
-                    cursor: 'pointer',
-                    color: 'var(--navy-blue)'
-                  }}
-                >
-                  <span>Contact</span>
-                  <span style={{ fontSize: '0.8rem', transform: isMobileContactOpen ? 'rotate(180deg)' : 'rotate(0deg)', transition: 'transform 0.3s' }}>▼</span>
-                </div>
-                
-                <AnimatePresence>
-                  {isMobileContactOpen && (
-                    <motion.div 
-                      initial={{ height: 0, opacity: 0 }}
-                      animate={{ height: 'auto', opacity: 1 }}
-                      exit={{ height: 0, opacity: 0 }}
-                      style={{ 
-                        overflow: 'hidden', 
-                        display: 'flex', 
-                        flexDirection: 'column', 
-                        gap: '12px', 
-                        paddingTop: '15px', 
-                        paddingLeft: '10px'
-                      }}
-                    >
-                      <a href="tel:+919830540185" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-dark)', fontSize: '1.1rem', fontWeight: '700' }}>
-                        <Phone size={16} color="var(--primary-green)" /> +91 9830540185
-                      </a>
-                      <a href="mailto:bengalnexusexports@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-muted)', fontSize: '0.9rem', fontWeight: '500' }}>
-                        <Mail size={14} color="var(--primary-green)" /> bengalnexusexports@gmail.com
-                      </a>
-                      <Link 
-                        to="/contact" 
-                        onClick={() => {
-                          setIsMobileMenuOpen(false);
-                          setIsMobileContactOpen(false);
-                        }}
-                        style={{ 
-                          color: 'var(--accent-gold)', 
-                          fontSize: '0.9rem', 
-                          fontWeight: '600',
-                          textDecoration: 'underline'
-                        }}
-                      >
-                        Go to Contact Page / Send Inquiry
-                      </Link>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
+              
+              {/* Show mobile number underneath Contact directly in the mobile menu */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '5px', borderBottom: '1px solid #eee', paddingBottom: '10px' }}>
+                <NavLink to="/contact" onClick={() => setIsMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: '600' }}>Contact</NavLink>
+                <a href="tel:+919830540185" style={{ color: 'var(--text-muted)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '8px', fontSize: '1rem', paddingLeft: '5px', paddingTop: '5px' }}>
+                  <Phone size={14} color="var(--primary-green)" /> +91 9830540185
+                </a>
               </div>
+              
               <Link to="/contact" className="btn btn-primary" onClick={() => setIsMobileMenuOpen(false)} style={{ marginTop: '10px', textAlign: 'center' }}>Request Quote</Link>
               
               <div style={{ marginTop: '20px', display: 'flex', flexDirection: 'column', gap: '10px', color: 'var(--text-muted)' }}>

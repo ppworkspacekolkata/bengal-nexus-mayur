@@ -17,8 +17,6 @@ export default function Contact() {
     setIsSubmitting(true);
     
     const formData = new FormData(e.target);
-    formData.append("_subject", "New B2B Export Inquiry from Website");
-    formData.append("_captcha", "false");
     
     try {
       const response = await fetch("https://formsubmit.co/ajax/bengalnexusexports@gmail.com", {
@@ -100,7 +98,7 @@ export default function Contact() {
                 <div style={{ width: '70px', height: '70px', borderRadius: '50%', background: '#E5B834', color: '#0B131D', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 25px' }}>
                   <Check size={36} />
                 </div>
-                <h3 style={{ color: '#E5B834', fontSize: '1.8rem', fontWeight: '700', marginBottom: '15px' }}>Inquiry Sent Successfully!</h3>
+                <h3 style={{ color: '#E5B834', fontSize: '1.8rem', fontWeight: '700', marginBottom: '15px' }}>Inquiry Submitted Successfully!</h3>
                 <p style={{ color: '#A0AAB2', fontSize: '1.05rem', lineHeight: '1.6', maxWidth: '500px', margin: '0 auto' }}>Thank you for reaching out. Our global trade and export specialists have received your requirements and will compile a customized quotation for you within 24 hours.</p>
                 <button onClick={() => setIsSuccess(false)} className="btn btn-outline" style={{ marginTop: '30px', padding: '12px 28px', color: '#E5B834', borderColor: '#E5B834', background: 'transparent', borderRadius: '30px' }}>Send Another Inquiry</button>
               </motion.div>
@@ -108,7 +106,8 @@ export default function Contact() {
               <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '25px' }}>
                 {/* FormSubmit details */}
                 <input type="hidden" name="_subject" value="New B2B Export Inquiry from Website" />
-                <input type="hidden" name="_captcha" value="false" />
+                <input type="hidden" name="_honey" style={{ display: 'none' }} />
+                <input type="hidden" name="_template" value="table" />
 
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '25px' }}>
                   <div>
@@ -246,7 +245,7 @@ export default function Contact() {
                     opacity: isSubmitting ? 0.7 : 1
                   }}
                 >
-                  {isSubmitting ? 'Sending Enquiry...' : 'Send Enquiry'} <Send size={18} />
+                  {isSubmitting ? 'Submitting Inquiry...' : 'Submit Inquiry'} <Send size={18} />
                 </button>
               </form>
             )}
