@@ -40,7 +40,7 @@ ${message}
 
     const encodedText = encodeURIComponent(text);
     const whatsappNumber = "919830540185"; // Owner's WhatsApp Number
-    const whatsappUrl = `https://api.whatsapp.com/send?phone=${whatsappNumber}&text=${encodedText}`;
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodedText}`;
     
     setIsSuccess(true);
     e.target.reset();
